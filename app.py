@@ -1,13 +1,8 @@
-import gdown
 import pandas as pd
 from flask import Flask, request, jsonify
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Download dataset from Google Drive
-# csv_file_id = "1Yw0BQRKypCh0d-DKaX5uQLgH4qb9Owt2"  # Replace with actual ID
-# csv_url = f"https://drive.google.com/uc?id={csv_file_id}"
-# gdown.download(csv_url, "full_dataset.csv", quiet=False)
 
 # Load dataset
 df = pd.read_csv("small_dataset.csv")
@@ -47,4 +42,4 @@ def recommend():
     return jsonify({"recommended_recipes": recommendations})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
