@@ -1,0 +1,4 @@
+flask
+pandas
+gdown
+scikit-learn
